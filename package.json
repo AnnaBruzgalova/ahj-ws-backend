@@ -4,10 +4,11 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "prestart": "npm install",
+        "prestart": "npm install --legacy peer deep",
         "start": "forever server.js",
         "watch": "forever -w server.js",
-        "stop": "forever stopall"
+        "stop": "forever stopall",
+        "lint": "eslint ."
     },
     "repository": {
         "type": "git",
@@ -20,7 +21,9 @@
     },
     "homepage": "https://github.com/AnnaBruzgalova/ahj-ws-backend#readme",
     "dependencies": {
-        "forever": "^0.10.10",
+        "deep": "^0.0.2",
+        "forever": "^4.0.3",
+        "glob-parent": "^6.0.2",
         "http-event-stream": "^0.2.0",
         "koa": "^2.14.2",
         "koa-body": "^6.0.1",
@@ -28,10 +31,12 @@
         "koa-cors": "^0.0.16",
         "koa-router": "^12.0.0",
         "koa-static": "^5.0.0",
+        "lint": "^0.8.19",
+        "peer": "^1.0.0",
         "uuid": "^9.0.0",
         "ws": "^8.13.0"
     },
     "engines": {
-        "node": "12.x"
+        "node": "16.x"
     }
 }
